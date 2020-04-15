@@ -1,0 +1,36 @@
+
+.app {
+  text-align: center;
+  display: grid;
+
+  grid-template-areas: 
+  'header header'
+  'nav main';
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.app-logo {
+  height: 50px;
+  pointer-events: none;
+}
+
+.app-header {
+  grid-area: header;
+  background-color: gold;
+}
+
+.app-nav {
+  grid-area: nav;
+  background-color: blue
+}
+
+.app-nav ul {
+  list-style: none;
+}
+
+.app-main{ 
+  grid-area: main;
+  background-color: aqua
+}
