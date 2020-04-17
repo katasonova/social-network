@@ -1,0 +1,9 @@
+.header {
+    grid-area: header;
+    background-color: gold;
+}
+
+.logo {
+    height: 50px;
+    pointer-events: none;
+}

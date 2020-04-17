@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Navigation.module.css';
 
 const Navigation = () => {
   return (
-      <nav className='app-nav'>
+      <nav className={styles.nav}>
         <ul>
           <li><a>Profile</a></li>
           <li><a>Messages</a></li>
