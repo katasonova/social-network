@@ -1,2 +1,12 @@
+.mainSection {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
 
+.dialogItem {
+    color: darkslategray;
+}
 
+.activeDialogItem {
+    color: firebrick;
+}
