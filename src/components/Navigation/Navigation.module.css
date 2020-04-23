@@ -1,8 +1,17 @@
-.nav {
+nav {
     grid-area: nav;
     background-color: lightblue;
   }
   
-.nav ul {
+ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: beige;
+}
+
+a.active {
+    color: cornflowerblue;
 }

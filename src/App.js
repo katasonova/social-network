@@ -3,7 +3,7 @@ import Header from './components/Header/Header'
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Profile from './components/Profile/Profile';
-import Dialogs from "./components/Dialogs/Dialogs";
+import Messages from "./components/Messages/Messages";
 import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -17,7 +17,7 @@ const App = () => {
                 <Navigation/>
                 <main>
                     <Route component={Profile} path={'/profile'}/>
-                    <Route component={Dialogs} path={'/dialog'}/>
+                    <Route component={Messages} path={'/messages'}/>
                     <Route component={News} path={'/news'}/>
                     <Route component={Music} path={'/music'}/>
                     <Route component={Settings} path={'/settings'}/>
