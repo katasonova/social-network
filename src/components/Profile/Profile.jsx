@@ -9,7 +9,7 @@ const Profile = (props) => {
             <img
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJuQSiMfXlhyoh63BEzP_YvcCHLPC_Cf-Aj6JgiDsRSzVg7I7p&usqp=CAU'/>
             <PersonalInfo />
-            <Posts postsData={props.postsData}/>
+            <Posts postsData={props.state.postsData}/>
         </>
     );
 }

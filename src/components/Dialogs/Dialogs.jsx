@@ -8,11 +8,11 @@ const Dialogs = (props) => {
         <section className={styles.mainSection}>
             <section className={styles.dialogs}>
                 <ul>
-                    {props.dialogsData.map(dialog => <Dialog userName={dialog.name} userId={dialog.id}/>)}
+                    {props.state.dialogsData.map(dialog => <Dialog userName={dialog.name} userId={dialog.id}/>)}
                 </ul>
             </section>
             <section className={styles.messages}>
-                {props.messagesData.map(message => <Message message={message.message}/>)}
+                {props.state.messagesData.map(message => <Message message={message.message}/>)}
             </section>
         </section>
     );
