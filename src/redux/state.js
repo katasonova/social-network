@@ -25,7 +25,8 @@ const state = {
             {id: 3, message: 'Hello there!'},
             {id: 4, message: 'Yo! Come visit us!'},
             {id: 5, message: 'No, i am planning to do staycations'},
-        ]
+        ],
+        newMessageText: 'Add your message here...'
     }
 };
 
@@ -42,6 +43,22 @@ export const addNewPost = () => {
 
 export const updateNewPostMessage = (newPost) => {
     state.profilePage.newPostMessage = newPost;
+    rerenderAppTree(state);
+}
+
+export const addNewMessage = () => {
+    const newMessageText = {
+        id: 6,
+        message: state.dialogsPage.newMessageText
+    };
+
+    state.dialogsPage.messagesData.push(newMessageText);
+    state.dialogsPage.newMessageText = '';
+    rerenderAppTree(state);
+};
+
+export const updateNewMessage = (newMessage) => {
+    state.dialogsPage.newMessageText = newMessage;
     rerenderAppTree(state);
 }
 

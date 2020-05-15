@@ -16,11 +16,13 @@ const App = (props) => {
             <Header/>
             <Navigation/>
             <main>
-                <Route render={() => <Profile state={props.state.profilePage} addNewPost={props.addNewPost} updateNewPostMessage={props.updateNewPostMessage}/>} path={'/profile'}/>
-                <Route render={() => <Dialogs state={props.state.dialogsPage}/>} path={'/dialogs'}/>
-                <Route component={News} path={'/news'}/>
-                <Route component={Music} path={'/music'}/>
-                <Route component={Settings} path={'/settings'}/>
+                <Route path={'/profile'}
+                       render={() => <Profile state={props.state.profilePage} addNewPost={props.addNewPost}
+                                              updateNewPostMessage={props.updateNewPostMessage}/>}/>
+                <Route path={'/dialogs'} render={() => <Dialogs state={props.state.dialogsPage} addNewMessage={props.addNewMessage} updateNewMessage={props.updateNewMessage}/>}/>
+                <Route path={'/news'} component={News}/>
+                <Route path={'/music'} component={Music}/>
+                <Route path={'/settings'} component={Settings}/>
             </main>
         </div>
     );
