@@ -1,3 +1,5 @@
+import {rerenderAppTree} from "../render";
+
 const state = {
     profilePage: {
         postsData: [
@@ -6,6 +8,7 @@ const state = {
             {id: 3, post: 'SUMMER IS HERE :)'},
             {id: 4, post: 'It\'s my first post'}
         ],
+        newPostMessage: 'Add your post here...'
     },
     dialogsPage: {
         dialogsData: [
@@ -25,5 +28,21 @@ const state = {
         ]
     }
 };
+
+export const addNewPost = () => {
+    const newPost = {
+        id: 5,
+        post: state.profilePage.newPostMessage
+    };
+
+    state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostMessage = '';
+    rerenderAppTree(state);
+};
+
+export const updateNewPostMessage = (newPost) => {
+    state.profilePage.newPostMessage = newPost;
+    rerenderAppTree(state);
+}
 
 export default state;
