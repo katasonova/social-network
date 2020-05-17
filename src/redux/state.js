@@ -1,4 +1,4 @@
-import {rerenderAppTree} from "../render";
+let rerenderAppTree = () => {};
 
 const state = {
     profilePage: {
@@ -60,6 +60,10 @@ export const addNewMessage = () => {
 export const updateNewMessage = (newMessage) => {
     state.dialogsPage.newMessageText = newMessage;
     rerenderAppTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderAppTree = observer;
 }
 
 export default state;
