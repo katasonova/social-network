@@ -8,8 +8,7 @@ import React from "react";
 const rerenderAppTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} addNewPost={store.addNewPost.bind(store)} updateNewPostMessage={store.updateNewPostMessage.bind(store)}
-                 addNewMessage={store.addNewMessage.bind(store)} updateNewMessage={store.updateNewMessage.bind(store)}/>
+            <App state={state} dispatch={store.dispatch.bind(store)}/>
         </BrowserRouter>,
         document.getElementById('root')
     );

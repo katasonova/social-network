@@ -9,8 +9,8 @@ const Profile = (props) => {
         <>
             <img
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJuQSiMfXlhyoh63BEzP_YvcCHLPC_Cf-Aj6JgiDsRSzVg7I7p&usqp=CAU'/>
-            <PersonalInfo />
-            <Posts postsData={props.state.postsData} addNewPost={props.addNewPost} updateNewPostMessage={props.updateNewPostMessage} newPostMessage={props.state.newPostMessage}/>
+            <PersonalInfo/>
+            <Posts postsData={props.state.postsData} dispatch={props.dispatch} newPostMessage={props.state.newPostMessage}/>
         </>
     );
 }
