@@ -1,5 +1,5 @@
-import * as serviceWorker from './serviceWorker';
-import store from "./redux/store";
+import * as serviceWorker from "./serviceWorker";
+import store from "./redux/redux-store";
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
@@ -14,7 +14,10 @@ const rerenderAppTree = (state) => {
     );
 }
 
-store.subscribe(rerenderAppTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderAppTree(state);
+});
 
 rerenderAppTree(store.getState());
 

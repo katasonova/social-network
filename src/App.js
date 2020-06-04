@@ -1,8 +1,8 @@
-import React from 'react';
-import Header from './components/Header/Header'
-import './App.css';
-import Navigation from './components/Navigation/Navigation';
-import Profile from './components/Profile/Profile';
+import React from "react";
+import Header from "./components/Header/Header";
+import "./App.css";
+import Navigation from "./components/Navigation/Navigation";
+import Profile from "./components/Profile/Profile";
 import {Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
