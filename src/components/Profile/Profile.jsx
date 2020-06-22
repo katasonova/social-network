@@ -1,8 +1,6 @@
 import React from 'react';
-import styles from './Profile.module.css';
-import Posts from './Posts/Posts';
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
-import {updatePostMessage} from "../../redux/store";
+import PostsContainer from "./Posts/PostsContainer";
 
 const Profile = (props) => {
     return (
@@ -10,7 +8,7 @@ const Profile = (props) => {
             <img
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJuQSiMfXlhyoh63BEzP_YvcCHLPC_Cf-Aj6JgiDsRSzVg7I7p&usqp=CAU'/>
             <PersonalInfo/>
-            <Posts postsData={props.state.postsData} dispatch={props.dispatch} newPostMessage={props.state.newPostMessage}/>
+            <PostsContainer store={props.store}/>
         </>
     );
 }

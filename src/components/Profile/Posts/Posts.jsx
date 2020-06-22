@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from './Posts.module.css';
 import Post from './Post/Post';
-import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/profilePageReducer";
 
 const Posts = (props) => {
     const newPostMessage = React.createRef();
 
     const addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPostActionCreator();
     };
 
     const onPostChange = () => {
-        props.dispatch(updateNewPostActionCreator(newPostMessage.current.value));
+        props.updateNewPostActionCreator(newPostMessage.current.value);
     };
 
     return (
