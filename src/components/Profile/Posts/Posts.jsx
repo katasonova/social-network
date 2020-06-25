@@ -16,9 +16,9 @@ const Posts = (props) => {
     return (
         <section className={styles.posts}>
             <h3>My posts</h3>
-            <textarea onChange={onPostChange} cols="50" rows="3" ref={newPostMessage} value={props.newPostMessage}/>
+            <textarea onChange={onPostChange} cols="50" rows="3" ref={newPostMessage} value={props.profilePage.newPostMessage}/>
             <button onClick={addPost}>send</button>
-            {props.postsData.map(post => <Post message={post.post}/>)}
+            {props.profilePage.postsData.map(post => <Post message={post.post}/>)}
         </section>);
 }
 

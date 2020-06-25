@@ -18,14 +18,14 @@ const Dialogs = (props) => {
         <section className={styles.mainSection}>
             <section className={styles.dialogs}>
                 <ul>
-                    {props.dialogsData.map(dialog => <Dialog userName={dialog.name} userId={dialog.id}/>)}
+                    {props.dialogsPage.dialogsData.map(dialog => <Dialog userName={dialog.name} userId={dialog.id}/>)}
                 </ul>
             </section>
             <section className={styles.messages}>
-                {props.messagesData.map(message => <Message message={message.message}/>)}
+                {props.dialogsPage.messagesData.map(message => <Message message={message.message}/>)}
                 <section>
                     <textarea onChange={onTextMessageChange} cols="80" rows="5" ref={newMessage}
-                              value={props.newMessageText}/>
+                              value={props.dialogsPage.newMessageText}/>
                     <button onClick={sendMessage}>send</button>
                 </section>
             </section>
