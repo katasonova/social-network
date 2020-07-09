@@ -3,30 +3,6 @@ import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/p
 import Posts from "./Posts";
 import {connect} from "react-redux";
 
-// const PostsContainer = (props) => {
-//
-//     return (
-//         <StoreContext.Consumer>
-//             {store => {
-//
-//                 const state = store.getState().profilePage;
-//
-//                 const addPost = () => {
-//                     store.dispatch(addPostActionCreator());
-//                 };
-//
-//                 const onPostChange = (newPostMessage) => {
-//                     store.dispatch(updateNewPostActionCreator(newPostMessage));
-//                 };
-//
-//                 return (<Posts addPostActionCreator={addPost} updateNewPostActionCreator={onPostChange}
-//                               profilePage={state}/>)
-//             }}
-//
-//         </StoreContext.Consumer>
-//     )
-// }
-
 const mapStateToProps = (state) => {
     return {
         profilePage: state.profilePage

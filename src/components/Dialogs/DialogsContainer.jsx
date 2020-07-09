@@ -3,27 +3,6 @@ import {addNewMessageActionCreator, updateNewMessageActionCreator} from "../../r
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
-// const DialogsContainer = (props) => {
-//
-//     return (
-//         <StoreContext.Consumer>
-//             {store => {
-//                 const state = store.getState().dialogsPage;
-//
-//                 const sendMessage = () => {
-//                     store.dispatch(addNewMessageActionCreator());
-//                 }
-//
-//                 const onTextMessageChange = (newMessage) => {
-//                     store.dispatch(updateNewMessageActionCreator(newMessage))
-//                 };
-//                 return <Dialogs addNewMessageActionCreator={sendMessage}
-//                                 updateNewMessageActionCreator={onTextMessageChange}
-//                                 dialogsPage={state}/>;
-//             }}
-//         </StoreContext.Consumer>)
-// }
-
 const mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage

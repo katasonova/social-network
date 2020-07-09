@@ -12,26 +12,28 @@ const initialState = {
 };
 
 const profilePageReducer = (state = initialState, action) => {
+    const stateCopy = {...state};
     switch (action.type) {
         case
         ADD_NEW_POST:
+            stateCopy.postsData = [...state.postsData]
             const newPost = {
                 id: 5,
-                post: state.newPostMessage
+                post: stateCopy.newPostMessage
             };
 
-            state.postsData.push(newPost);
-            state.newPostMessage = '';
+            stateCopy.postsData.push(newPost);
+            stateCopy.newPostMessage = '';
             break;
         case
         UPDATE_NEW_POST_MESSAGE:
-            state.newPostMessage = action.newPost;
+            stateCopy.newPostMessage = action.newPost;
             break;
         default:
             break;
     }
 
-    return state;
+    return stateCopy;
 };
 
 export const addPostActionCreator = () => ({type: ADD_NEW_POST});
