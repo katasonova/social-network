@@ -8,7 +8,7 @@ const initialState = {
         {id: 3, name: 'Chris'},
         {id: 4, name: 'Alex'},
         {id: 5, name: 'Tanya'},
-        {id: 6, name: 'Josep'},
+        {id: 6, name: 'User134'},
     ],
     messagesData: [
         {id: 1, message: 'Hello there!'},
