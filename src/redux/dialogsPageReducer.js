@@ -3,19 +3,19 @@ const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 
 const initialState = {
     dialogsData: [
-        {id: 1, name: 'Angela'},
-        {id: 2, name: 'Chisomo'},
-        {id: 3, name: 'Chris'},
-        {id: 4, name: 'Alex'},
-        {id: 5, name: 'Tanya'},
-        {id: 6, name: 'User134'},
+        {id: 1, name: 'User1'},
+        {id: 2, name: 'User2'},
+        {id: 3, name: 'User3'},
+        {id: 4, name: 'User4'},
+        {id: 5, name: 'User5'},
+        {id: 6, name: 'User6'},
     ],
     messagesData: [
         {id: 1, message: 'Hello there!'},
         {id: 2, message: 'YES!!'},
         {id: 3, message: 'Hello there!'},
-        {id: 4, message: 'Yo! Come visit us!'},
-        {id: 5, message: 'No, i am planning to do staycations'},
+        {id: 4, message: 'Message1'},
+        {id: 5, message: 'Message2'},
     ],
     newMessageText: 'Add your message here...'
 };
