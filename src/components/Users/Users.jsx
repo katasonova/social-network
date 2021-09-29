@@ -5,18 +5,22 @@ import userImg from '../../assets/img/user.png'
 
 const Users = (props) => {
   
-  if (props.users.length === 0) {
+ let getUsers = () => { if (props.users.length === 0) {
     axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
       debugger
       props.setUsers(response.data.items)
     }
     )
   }
+}
   
 
     return (
-      props.users.map(el => {
+      <div>
+      <button onClick={getUsers}>Get Users</button>
+      {props.users.map(el => {
           return (
+           
             <section key={el.id} class={styles.container}>
               <img src={el.photos.small !== null ? el.photos.small : userImg} alt="" />
               {el.isFollowed 
@@ -30,8 +34,9 @@ const Users = (props) => {
               </div>
             </section>
           )
-      })  
-    )
+      })}  
+    
+    </div>)
 }
 
 export default Users;
