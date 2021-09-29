@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './Users.module.css';
+import * as axios from 'axios';
+import userImg from '../../assets/img/user.png'
 
 const Users = (props) => {
   
   if (props.users.length === 0) {
-    props.setUsers([
-        {id: 1, userName: 'User1', status: 'Hello there!', location: {city: 'London', country: 'UK'}, isFollowed: true, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNJEbNBW7WgMiqHuSO0OPtl8yxP218c-U-4Q&usqp=CAU'},
-        {id: 2, userName: 'User2', status: 'Hello there!', location: {city: 'London', country: 'UK'}, isFollowed: false, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNJEbNBW7WgMiqHuSO0OPtl8yxP218c-U-4Q&usqp=CAU'},
-        {id: 3, userName: 'User3', status: 'Hello there!', location: {city: 'London', country: 'UK'}, isFollowed: true, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNJEbNBW7WgMiqHuSO0OPtl8yxP218c-U-4Q&usqp=CAU'},
-      ])
+    axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+      debugger
+      props.setUsers(response.data.items)
+    }
+    )
   }
   
 
@@ -16,15 +18,15 @@ const Users = (props) => {
       props.users.map(el => {
           return (
             <section key={el.id} class={styles.container}>
-              <img src={el.img} alt="" />
+              <img src={el.photos.small !== null ? el.photos.small : userImg} alt="" />
               {el.isFollowed 
                 ? <button onClick={() => {props.follow(el.id)}}>Follow</button> 
                 : <button onClick={() => {props.unfollow(el.id)}}>Unfollow</button>}
               <div>
                   <p>{el.userName}</p>
                   <p>{el.status}</p>
-                  <p>{el.location.city}</p>
-                  <p>{el.location.country}</p>
+                  <p>{"el.location.city"}</p>
+                  <p>{"el.location.country"}</p>
               </div>
             </section>
           )
