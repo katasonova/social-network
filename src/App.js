@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header/Header";
 import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
-import Profile from "./components/Profile/Profile";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 import {Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -17,7 +17,7 @@ const App = (props) => {
             <Navigation/>
             <main>
                 <Route path={'/profile'}
-                       render={() => <Profile/>}/>
+                       render={() => <ProfileContainer/>}/>
                 <Route path={'/dialogs'}
                        render={() => <DialogsContainer/>}/>
                 <Route path={'/users'}
