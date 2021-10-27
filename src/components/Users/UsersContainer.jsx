@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import { follow, setUsers, unfollow, setTotalUsers, updateCurrentPage, updateIsFetching } from '../../redux/usersPageReducer';
 import Users from './Users';
 import * as axios from 'axios';
-import preloader from '../../assets/img/preloader.svg'
+import Preloader from '../common/Preloader/Preloader';
 
 class UsersContainer extends React.Component {
   componentDidMount () {
@@ -33,7 +33,7 @@ class UsersContainer extends React.Component {
    }
  
 
-   return  this.props.isFetching ? <img src={preloader} alt='preloader gif' /> : <Users 
+   return  this.props.isFetching ? <Preloader /> : <Users 
             totalUsersCount = {this.props.totalUsersCount}
             pageSize = {this.props.pageSize}
             onPageChange = {this.onPageChange}
