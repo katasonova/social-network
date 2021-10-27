@@ -9,8 +9,10 @@
 
 .pagination li {
     margin: 5px;
+    cursor: pointer;
 }
 
 .active {
     font-weight: bold;
+    color: rgb(0, 128, 0);
 }
