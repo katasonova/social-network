@@ -10,7 +10,7 @@ const PersonalInfo = (props) => {
     return (
         <section className={styles.personalInfo}>
             <img src={props.profile.photos.large} alt=''/>
-            Personal Info
+            <div>{props.profile.fullName}</div>
         </section>
     )
 };
