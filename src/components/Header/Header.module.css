@@ -1,6 +1,9 @@
 .header {
     grid-area: header;
     background-color: green;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .logo {
